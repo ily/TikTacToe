@@ -10,6 +10,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     static final String PLayer_1_o = "x";
@@ -94,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Check rows
         boolean wiin = true;
-        for (int c = 0; c<3; c++){
-            if (board [row][c] != playerValue) {
+        for (int c = 0; c < 3; c++) {
+            if (board[row][c] != playerValue) {
                 wiin = false;
                 break;
             }
@@ -105,6 +107,28 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Check Diagonals
+        boolean wind1 = true;
+        for (int c = 0; c < 3; c++) {
+            if (board[c][c] != playerValue) {
+                wind1 = false;
+                break;
+            }
+        }
+        if (wind1)
+            return playerValue;
+
+        boolean wind2 = true;
+        for (int c = 0; c<3; c++) {
+            if (board[2-c][c] != playerValue){
+                wind2 = false;
+                break;
+            }
+
+        }
+        if (wind2)
+            return playerValue;
+
+
 
         return -1;
     }
