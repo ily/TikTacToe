@@ -3,9 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:enabled="true"
-        android:onClick="newGame"
         android:title="New Game"
-        android:visible="true"
+        android:onClick="newGame"
+        app:showAsAction="always" />
+    <item
+        android:title="Save"
+        android:onClick="saveGame"
+        app:showAsAction="always" />
+    <item
+        android:title="Load"
+        android:onClick="loadGame"
         app:showAsAction="always" />
 </menu>
